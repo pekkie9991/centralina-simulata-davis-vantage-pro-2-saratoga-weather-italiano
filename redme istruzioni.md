@@ -23,7 +23,6 @@ Il sistema è progettato per interfacciarsi con le API WeatherLink v1, sincroniz
 * `davconvp2CUmx.php` / `davconvueCUmx.php`: Pagine di avvio rispettivamente per la console Vantage Pro 2 e Vantage Vue.
 * `davconvp2CUmx-inc.php` / `davconvueCUmx-inc.php`: Struttura del layout HTML/CSS interno delle console.
 * `weatherlink_sync.php`: Script di backend che gestisce le richieste API a WeatherLink, la cache locale e il motore di traduzione.
-* `Settings.php`: File di configurazione generale con unità di misura e fuso orario locale.
 * `/davcon`: Directory contenente i fogli di stile (CSS), gli script per la gestione dei grafici (Flot JS), lo scroller del testo e le immagini delle console.
 
 ## Installazione e Configurazione
