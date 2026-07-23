@@ -1,0 +1,321 @@
+@charset "UTF-8";
+/*
+ * silveracorn.nz UIMXwebsite Version 1.0.0
+ * Ver CW2.4.0 HTML5
+*/
+#table_container {
+   width: 900px;
+   margin: 0 auto;
+   font-family: Verdana, Helvetica, sans-serif;
+   font-size: 10pt;
+   color: #585858;
+}
+
+#table_container table {
+   border-width: 0px;
+   border-spacing: 0px 0px;
+}
+
+table {
+   empty-cells: show;
+}
+
+#vueconsole{
+   background:url('vue_console_lit.png') no-repeat center center;
+   height: 554px;
+   width: 600px;
+   position: relative;
+}
+
+#vp2console{
+   background:url('vp2_console_lit.png') no-repeat center center;
+   height: 440px;
+   width: 700px;
+   position: relative;
+}
+
+/*  !!!!!  REQUIRE BOTH .eot and .ttf files  !!!!!  */
+@font-face {
+   font-family: digi;
+   src: url('digi.eot') /* EOT file for IE */
+}
+
+@font-face {
+   font-family: digi;
+   src: url('digi.ttf') /* ttf file for CSS3 */
+}
+
+.content {
+   width: 100%;
+   position: center;
+	padding-left:  0px;
+	padding-right: 0px;
+	margin-left:   35px;
+	margin-right:  0px;
+}
+
+.buttonTable {
+   display: table;
+   width: 650px;
+   position: center;
+   font-size:   10pt;
+   margin-left:  -25px;
+   margin-right:   0px;
+   padding-bottom: 5px;
+   padding-left:   0px;
+   padding-right:  0px;
+}
+
+.rowCenter {
+   display: table-row;
+   position: relative;
+   text-align: center;
+}
+
+.cellLeft10 {
+   display: table-cell;
+   width: 10%;
+   margin-left:  0px;
+   margin-right:  0px;
+   padding-right: 0px;
+   text-align: left;
+   vertical-align: middle;
+   padding-bottom: 3px;
+}
+
+.cellLeft40 {
+   display: table-cell;
+   width: 40%;
+   padding-right: 0px;
+   text-align: left;
+   vertical-align: middle;
+}
+
+.cellLeft50 {
+   display: table-cell;
+   width: 50%;
+   padding-right: 0px;
+   text-align: left;
+   vertical-align: middle;
+   padding-top: 8px;
+   padding-bottom: 3px;
+}
+
+.cellCenter {
+   display: table-cell;
+   width: 100%;
+   text-align: center;
+   vertical-align: middle;
+   padding-top: 3px;
+   padding-bottom: 3px;
+}
+
+.cellRight {
+   display: table-cell;
+   text-align: right;
+   vertical-align: middle;
+   padding-top: 8px;
+   padding-bottom: 3px;
+}
+
+.warning {
+   color: red;
+}
+
+.vajax {
+   font-family: digi,Arial;
+   position: absolute;
+   font-size: 32px;
+   font-weight: 400;
+   color: #053D6C;
+}
+
+.smallb {
+   font-family: arial;
+   position: absolute;
+   font-size: 11px;
+   font-weight: bold;
+   color: #053D6C;
+}
+
+.small {
+   font-family: arial;
+   position: absolute;
+   font-size: 11px;
+   font-weight: normal;
+   color: #053D6C;
+}
+
+.normal {
+   font-family: verdana,arial;
+   position: absolute;
+   font-size: 12px;
+   font-weight: normal;
+}
+
+.btnwhi {
+   border: 1px solid grey;
+   padding: 2px 2px;
+   background-color: white;
+   height: 22px;
+   width: 55px;
+   border-radius: 6px;
+/*   -moz-border-radius: 6px;
+   -webkit-border-radius: 6px; */
+   text-align: center;
+   color:  #3F3831;
+   text-align: center;
+}
+
+.btnyel {
+   border: 1px solid grey;
+   padding: 2px 2px;
+   background-color: yellow;
+   height: 22px;
+   width: 55px;
+   border-radius: 6px;
+/*   -moz-border-radius: 6px;
+   -webkit-border-radius: 6px; */
+   text-align: center;
+}
+
+.btnbrn {
+   border: 1px solid grey;
+   padding: 2px 2px;
+   background-color: #3F3831;
+   height: 22px;
+   width: 55px;
+   border-radius: 6px;
+/*   -moz-border-radius: 6px;
+   -webkit-border-radius: 6px; */
+   text-align: center;
+   color: white;
+}
+
+.btngrey {
+   border: 1px solid grey;
+   padding: 2px 2px;
+   background-color: #505058;
+   height: 22px;
+   width: 55px;
+   border-radius: 6px;
+/*   -moz-border-radius: 6px;
+   -webkit-border-radius: 6px; */
+   text-align: center;
+   color: white;
+}
+
+/*====================================================
+CSS Tooltips by Adam Whitcroft
+https://github.com/AdamWhitcroft/CSS.Tooltips
+======================================================
+Tooltips - VP2 & Vue Table
+=====================================================*/
+[data-tip] {
+   position: relative;
+   cursor: none;
+}
+[data-tip]:before {
+   content: '';
+   /* hides the tooltip when not hovered */
+   display: none;
+}
+[data-tip]:after {
+   display: none;
+   content: attr(data-tip);
+   position: absolute;
+   top: 3px;
+   left: -55px;
+   padding: 2px 3px;
+   background: #C8C8C8;
+   color: #383838;
+   z-index: 9;
+   font-size: 12px;
+   height: 14px;
+   line-height: 14px;
+/*   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px; */
+   border-radius: 5px;
+   white-space: nowrap;
+   word-wrap: normal;
+}
+[data-tip]:hover:before,
+[data-tip]:hover:after {
+   display: block;
+}
+
+/*====================================================
+CSS Tooltips by Adam Whitcroft
+https://github.com/AdamWhitcroft/CSS.Tooltips
+======================================================
+Tooltips - Vue Console
+=====================================================*/
+[data-vuc-tip] {
+   position: relative;
+   cursor: none;
+}
+[data-vuc-tip]:before {
+   content: '';
+   /* hides the tooltip when not hovered */
+   display: none;
+}
+[data-vuc-tip]:after {
+   display: none;
+   content: attr(data-vuc-tip);
+   position: absolute;
+   top: -12px;
+   left: -5px;
+   padding: 2px 3px;
+   background: #C8C8C8;
+   color: #383838;
+   z-index: 9;
+   font-size: 12px;
+   height: 14px;
+   line-height: 14px;
+/*   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px; */
+   border-radius: 5px;
+   white-space: nowrap;
+   word-wrap: normal;
+}
+[data-vuc-tip]:hover:before,
+[data-vuc-tip]:hover:after {
+   display: block;
+}
+
+/* Scroller Box */
+#vue_scroller_container {
+   font-family: digi,Arial;
+   font-size: 23px;
+   color: #053D6C;
+   position: absolute;
+   top: 273px;
+   left: 232px;
+   width: 150px;
+   height: 24px;
+   overflow: hidden;
+}
+
+#vp2_scroller_container {
+   font-family: digi,Arial;
+   font-size: 23px;
+   color: #053D6C; 
+   position: absolute;
+   top: 262px;
+   left: 52px;
+   width: 390px;
+   height: 24px;
+   overflow: hidden;
+}
+
+.jscroller2_left, .jscroller2_left_endless {
+   margin: 0;
+   padding: 0;
+   white-space: nowrap;
+}
+
+ #lampsbtn:hover, #tempbtn:hover, #humbtn:hover, #windbtn:hover, #rainbtn:hover, #barbtn:hover,
+ #secndbtn:hover, #WxCenbtn:hover, #fcastbtn:hover, #graphbtn:hover, #hilowbtn:hover, #timebtn:hover, #alarmbtn:hover, #donebtn:hover,
+ #lampsbtnt:hover, #tempbtnt:hover, #humbtnt:hover, #windbtnt:hover, #rainbtnt:hover, #barbtnt:hover,
+ #secndbtnt:hover, #WxCenbtnt:hover, #fcastbtnt:hover, #graphbtnt:hover, #hilowbtnt:hover, #timebtnt:hover, #alarmbtnt:hover, #donebtnt:hover
+ { cursor:pointer; }
