@@ -1,4 +1,10 @@
 <?php
+// ABILITA LA DIAGNOSTICA DEI PARSE ERROR
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
 $davconvp2ver = "davconvp2CUmx.php - silveracorn.nz MXUI website - Version MX_2.1.3 - 16-Sep-2020";
 // MX version 3089
 ###############################################################################
@@ -98,6 +104,7 @@ $imgdir		= './davcon/'; // path to jquery, css and images with trailing /
 $storm		=	'Y';	// Y or N Only Davis has storm rain
 $showsolar	=	'Y';	// Y or N 
 $showuv		=	'Y';	// Y or N
+$vpstormrain = 'Y';     // <--- AGGIUNGI QUESTA RIGA DI SICUREZZA
 $stnnumbrs	= '1&nbsp;' . ' &nbsp;' . ' &nbsp;' . ' &nbsp;' . ' &nbsp;' . ' &nbsp;' . ' &nbsp;' . ' &nbsp;';
 $showstnnum = true;	// $showstnnum = true; OR $showstnnum = false;
 $showantenna= true;	// $showantenna = true; OR $showantenna = false;

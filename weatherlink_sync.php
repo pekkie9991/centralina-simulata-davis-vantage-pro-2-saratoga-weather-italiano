@@ -1,4 +1,9 @@
 <?php
+// ABILITA LA DIAGNOSTICA DEGLI ERRORI PHP
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // weatherlink_sync.php - Dynamically fetches WeatherLink data and generates Cumulus-style files
 date_default_timezone_set('Europe/Rome');
 
@@ -17,9 +22,9 @@ if (isset($SITE) && is_array($SITE)) {
 date_default_timezone_set($tz);
 
 // Define config values
-$WL_DID   = "YOUR_DID_HERE";
-$WL_PASS  = "YOUR_PASSWORD_HERE";
-$WL_TOKEN = "YOUR_TOKEN_HERE";
+$WL_DID   = "001D0AE0AD34";
+$WL_PASS  = "27819912009pke";
+$WL_TOKEN = "F7C3B4D073AF4AA094546FA1E21F8C4B";
 $interval = 5; // 5 minutes
 $zambretti = 0;
 $ns = 'n'; // Northern hemisphere for moon phase
@@ -175,19 +180,19 @@ if (!function_exists('translate_davis_forecast')) {
     }
 }
 
-// Helper function to fetch URL with fallback and diagnostic error logging
+// Helper function to fetch URL with fallback and diagnostic error logging (timeout ridotto a 3 secondi)
 if (!function_exists('fetch_weatherlink_url')) {
     function fetch_weatherlink_url($url) {
         $errors = "";
         
-        // Tentativo tramite cURL
+        // Tentativo tramite cURL con timeout rapido a 3 secondi
         if (function_exists('curl_init')) {
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-            curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 3); // Limite di attesa rapido
             $result = curl_exec($ch);
             if ($result === false) {
                 $errors .= "Tentativo cURL fallito: " . curl_error($ch) . "\n";
@@ -198,14 +203,14 @@ if (!function_exists('fetch_weatherlink_url')) {
             }
         }
         
-        // Tentativo alternativo tramite file_get_contents
+        // Tentativo alternativo tramite file_get_contents con timeout rapido a 3 secondi
         $ctx = stream_context_create([
             'ssl' => [
                 'verify_peer' => false,
                 'verify_peer_name' => false
             ],
             'http' => [
-                'timeout' => 10,
+                'timeout' => 3, // Limite di attesa rapido
                 'ignore_errors' => true
             ]
         ]);
@@ -613,7 +618,7 @@ if (file_exists($dataurl)) {
 
 if (!isset($wsforecast)) {
     $wsforecast = 'Partly cloudy';
-    $cumulusforecast = 'Partly cloudy';
+    $cumulusforecast = $wsforecast;
     $MoonAge = 14.0;
 }
 ?>
