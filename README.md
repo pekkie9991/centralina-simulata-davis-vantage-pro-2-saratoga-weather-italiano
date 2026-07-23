@@ -1,3 +1,4 @@
+
 # Console Davis VP2 & Vue - Meteo Limbiate
 
 Questo repository contiene l'integrazione PHP/HTML5 delle console meteorologiche **Davis Vantage Pro 2** e **Davis Vantage Vue** per il sito web di Meteo Limbiate (Villaggio del Sole).
@@ -37,3 +38,5 @@ Il sistema è progettato per interfacciarsi con le API WeatherLink v1, sincroniz
    $WL_DID   = "IL_TUO_DID";
    $WL_PASS  = "LA_TUA_PASSWORD";
    $WL_TOKEN = "IL_TUO_API_TOKEN";
+
+<img width="708" height="763" alt="Screenshot 2026-07-23 163807" src="https://github.com/user-attachments/assets/a8f6fb5f-e988-4acd-a269-22404f68a77c" />
